@@ -1,14 +1,11 @@
-PrintScreen::Reload
+toggle = 0
+#MaxThreadsPerHotkey 2
 #SingleInstance, Force
-SetBatchLines, 11
+SetBatchLines, 6
 SetMouseDelay, 0
-;Click simple
-;32.4 CPS 162/5s
-+Capslock::
-Loop
-{
-if GetKeyState("Capslock", "T")
-{
+CapsLock::
+Toggle := !Toggle
+While Toggle{
 Click
 }
-}
+return
